@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* TechGaming Store Design System - Dark Gaming Aesthetic */
+
+@layer base {
+  :root {
+    /* TechGaming Dark Palette */
+    --background: 222 47% 7%;
+    --foreground: 210 40% 98%;
+    
+    --card: 222 47% 10%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 222 47% 10%;
+    --popover-foreground: 210 40% 98%;
+    
+    /* Primary: Vivid Blue #3b82f6 */
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
+    
+    /* Secondary: Deep Blue #1e3a8a */
+    --secondary: 224 76% 33%;
+    --secondary-foreground: 210 40% 98%;
+    
+    /* Muted: Dark Slate */
+    --muted: 222 47% 15%;
+    --muted-foreground: 215 20% 65%;
+    
+    /* Accent: Electric Blue #1e40af */
+    --accent: 223 74% 40%;
+    --accent-foreground: 210 40% 98%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 47% 7%;
+    
+    --border: 222 47% 18%;
+    --input: 222 47% 15%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 222 47% 10%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 223 74% 40%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 47% 18%;
+    --sidebar-ring: 217 91% 60%;
+    
+    /* Gaming Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(224 76% 33%) 0%, hsl(223 74% 40%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(223 74% 40%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(222 47% 12%) 0%, hsl(222 47% 8%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(217 91% 60% / 0.15) 0%, transparent 70%);
+    
+    /* Gaming Shadows */
+    --shadow-gaming: 0 25px 50px -12px hsl(217 91% 60% / 0.25);
+    --shadow-glow: 0 0 40px hsl(217 91% 60% / 0.3);
+    --shadow-card: 0 10px 30px -10px hsl(0 0% 0% / 0.5);
+    
+    /* Smooth Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .dark {
+    /* Same as root - TechGaming is always dark */
+    --background: 222 47% 7%;
+    --foreground: 210 40% 98%;
+    
+    --card: 222 47% 10%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 222 47% 10%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 224 76% 33%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 222 47% 15%;
+    --muted-foreground: 215 20% 65%;
+    
+    --accent: 223 74% 40%;
+    --accent-foreground: 210 40% 98%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 222 47% 18%;
+    --input: 222 47% 15%;
+    --ring: 217 91% 60%;
+    
+    --sidebar-background: 222 47% 10%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 223 74% 40%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 47% 18%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  /* Gaming Typography */
+  .text-gaming-hero {
+    @apply tracking-tight leading-[1.1] font-bold;
+  }
+  
+  .text-gaming-label {
+    @apply tracking-wider uppercase text-xs font-semibold;
+  }
+  
+  /* Glow Effects */
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.4);
+  }
+  
+  .glow-primary-hover:hover {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.5);
+  }
+  
+  /* Gaming Card Style */
+  .gaming-card {
+    @apply bg-card border border-border rounded-lg;
+    background: var(--gradient-card);
+    transition: var(--transition-smooth);
+  }
+  
+  .gaming-card:hover {
+    @apply border-primary/50;
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-4px);
+  }
+  
+  /* Gradient Text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+  
+  /* Hero Overlay */
+  .hero-overlay {
+    background: linear-gradient(180deg, hsl(222 47% 7% / 0.7) 0%, hsl(222 47% 7% / 0.9) 100%);
+  }
+  
+  /* Gaming Button Styles */
+  .btn-gaming {
+    @apply relative overflow-hidden;
+    background: var(--gradient-primary);
+    transition: var(--transition-fast);
+  }
+  
+  .btn-gaming::before {
+    content: '';
+    @apply absolute inset-0 opacity-0;
+    background: linear-gradient(135deg, hsl(217 91% 70%) 0%, hsl(223 74% 50%) 100%);
+    transition: var(--transition-fast);
+  }
+  
+  .btn-gaming:hover::before {
+    @apply opacity-100;
+  }
+  
+  .btn-gaming:hover {
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+  }
+  
+  /* Smooth Reveal Animation */
+  .reveal {
+    @apply opacity-0 translate-y-8;
+    animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  .reveal-delayed {
+    @apply opacity-0 translate-y-8;
+    animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+  }
+  
+  @keyframes reveal {
+    to {
+      @apply opacity-100 translate-y-0;
+    }
+  }
+  
+  /* Pulse Glow Animation */
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(var(--primary) / 0.5);
+    }
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  /* RGB Border Animation */
+  @keyframes rgb-border {
+    0% {
+      border-color: hsl(217 91% 60%);
+    }
+    33% {
+      border-color: hsl(280 91% 60%);
+    }
+    66% {
+      border-color: hsl(340 91% 60%);
+    }
+    100% {
+      border-color: hsl(217 91% 60%);
+    }
+  }
+  
+  .animate-rgb-border {
+    animation: rgb-border 3s linear infinite;
+  }
+}
